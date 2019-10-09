@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Login</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<form th:action="@{/adminLogin}" th:object="${admin}" method="post">
+    <img src="/static/images/33a64ed7-0d65-4824-8aeb-0e99c725aca8-539.png"
+         style="width: 500px; height: 250px; margin-left: 500px;margin-bottom: 50px;margin-top: 50px;">
+
+
+    <p>
+        Email: <input
+            style=" width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;"
+            type="text" th:field="*{email}">
+    </p>
+    <p>
+        Password: <input
+            style=" width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;"
+            type="password" th:field="*{password}">
+    </p>
+    <p>
+        <input
+                type="submit"
+                value="Login"/>
+    </p>
+
+</form>
+
+</body>
+
+
+</html>

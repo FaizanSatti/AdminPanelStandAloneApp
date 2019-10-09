@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+</head>
+<body>
+
+<form th:action="@{/NewProduct}" th:object="${product}" method="post">
+
+    <p>
+        Name: <input
+            style=" width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                resize: vertical;"
+            type="text" th:field="*{name}">
+    </p>
+    <p>
+        Category_id: <input
+            style=" width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                resize: vertical;"
+            type="number" th:field="*{category_id}">
+    </p>
+    <p>
+        Image Path: <input
+            style=" width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                resize: vertical;"
+            type="text" th:field="*{img_src}">
+    </p>
+    <p>
+        Price: <input
+            style=" width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                resize: vertical;"
+            type="number" th:field="*{price}">
+    </p>
+
+    <p>
+        Description: <input
+            style=" width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                resize: vertical;"
+            type="text" th:field="*{description}">
+    </p>
+    <p>
+        <input
+                type="submit"
+                value="Add"/>
+    </p>
+
+</form>
+</body>
+</html>

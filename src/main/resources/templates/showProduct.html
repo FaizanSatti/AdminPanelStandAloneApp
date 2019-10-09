@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Panel</title>
+    <meta charset="UTF-8">
+</head>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+</head>
+
+<body>
+<h2>Product Details</h2>
+
+<a href="/NewProduct">
+    <button>Add New Product</button>
+</a>
+
+<form th:action="@{/delete}" th:object="${user}" method="post">
+
+    <input type="text" th:field="*{id}">
+    <button style="color: red" type="submit">Delete</button>
+
+</form>
+
+<form th:action="@{/update}" th:object="${user}" method="post">
+
+    <input type="text" th:field="*{id}">
+    <button style="color: yellow" type="submit">Update</button>
+
+</form>
+
+<table>
+    <tr>
+        <td th:text="Id"></td>
+        <td th:text="Image"></td>
+        <td th:text="Name"></td>
+        <td th:text="Price"></td>
+        <td th:text="Category_ID"></td>
+        <td th:text="Description"></td>
+    </tr>
+
+    <tr th:each=" Product : ${Products}">
+        <td th:text="${Product.id}"></td>
+        <td th:text="${Product.img_src}"></td>
+        <td th:text="${Product.name}"></td>
+        <td th:text="${Product.price}"></td>
+        <td th:text="${Product.category_id}"></td>
+        <td th:text="${Product.description}"></td>
+
+    </tr>
+</table>
+
+</body>
+</html>
